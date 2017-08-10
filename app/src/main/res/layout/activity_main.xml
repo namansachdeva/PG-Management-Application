@@ -9,8 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="30dp"
-        android:background="@color/colorAccent"
+        android:padding="30dp"
+        android:background="#c40d0630"
         android:orientation="vertical">
 
         <ImageView
