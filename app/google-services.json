@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "33797370182",
+    "firebase_url": "https://royal-group-72851.firebaseio.com",
+    "project_id": "royal-group-72851",
+    "storage_bucket": "royal-group-72851.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33797370182:android:eea9e8866abd49fd",
+        "android_client_info": {
+          "package_name": "com.naman.dev.royalgroup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33797370182-28bbce3urth260qubuokgoiqn1s0jdgg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.naman.dev.royalgroup",
+            "certificate_hash": "8c273c52c1f6cff1467f827823a2556c6ac1df55"
+          }
+        },
+        {
+          "client_id": "33797370182-6u4u9khsk203128766ojl0p674g2p4pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj_sRRfsfBTIOhhoJWIq7jdFvQZ-Gn4lY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33797370182-6u4u9khsk203128766ojl0p674g2p4pi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
