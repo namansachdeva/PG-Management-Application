@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AdminActivity" />
-        <activity android:name=".GuestActivity"></activity>
+        <activity android:name=".GuestActivity" />
+        <activity android:name=".NewGuestActivity" />
+        <activity android:name=".ImpContactsActivity"></activity>
     </application>
 
 </manifest>
