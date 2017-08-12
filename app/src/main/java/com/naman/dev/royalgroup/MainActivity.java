@@ -43,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         loginBtn = (Button) findViewById(R.id.login);
         guestmodeBtn = (Button) findViewById(R.id.guestmode);
 
+        guestmodeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,GuestActivity.class));
+            }
+        });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
         String username = usernameView.getText().toString();
         String password = passwordView.getText().toString();
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password) && !isPasswordValid(password)) {
             passwordView.setError("Enter Correct Password");
             focusView = passwordView;
             cancel = true;
         }
-        if (!TextUtils.isEmpty(username) && !isUsernameValid(username)) {
+        if (TextUtils.isEmpty(username) && !isUsernameValid(username)) {
             usernameView.setError("Enter Correct Username");
             focusView = usernameView;
             cancel = true;
