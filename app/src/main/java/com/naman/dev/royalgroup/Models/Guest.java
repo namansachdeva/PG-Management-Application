@@ -2,6 +2,8 @@ package com.naman.dev.royalgroup.Models;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by naman on 8/13/2017.
@@ -30,4 +32,14 @@ public class Guest {
         this.guestMonthArrayList = guestMonthArrayList;
     }
 
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> guest = new HashMap<>();
+        guest.put("guestName", guestName);
+        guest.put("guestMobileNo", guestMobileNo);
+        guest.put("guestPermanentAddress", guestPermanentAddress);
+        guest.put("guestCorrespondenceAddress", guestCorrespondenceAddress);
+        guest.put("guestRent", guestRent);
+        guest.put("guestMonthArrayList", guestMonthArrayList);
+        return guest;
+    }
 }
