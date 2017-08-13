@@ -1,9 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.naman.dev.royalgroup.NewGuestActivity">
+    android:background="#c40d0630"
+    android:orientation="vertical"
+    android:padding="30dp">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:hint="Name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="start"
+            android:hint="Mobile Number"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_perma_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="start"
+            android:hint="Permanent Address"
+            android:imeOptions="actionNext"
+            android:inputType="textPostalAddress"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_corres_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="start"
+            android:hint="Correspondence Address"
+            android:imeOptions="actionNext"
+            android:inputType="textPostalAddress"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:hint="Start Date"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_pg_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="start"
+            android:hint="PG Name"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/guest_roomno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:hint="Room No"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/proceedbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#660000"
+        android:text="Proceed"
+        android:textColor="#ffffff" />
+</LinearLayout>
+</ScrollView>
