@@ -84,7 +84,7 @@ public class NewRoomActivity extends AppCompatActivity {
 
             setEditingEnabled(false);
             Toast.makeText(NewRoomActivity.this,"Adding New Room...",Toast.LENGTH_SHORT).show();
-            mDatabase.addValueEventListener(new ValueEventListener() {
+            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     int pgCapacity;
@@ -93,6 +93,7 @@ public class NewRoomActivity extends AppCompatActivity {
                     else
                         pgCapacity = 0;
                     Room newRoom = new Room(capacity);
+                    pgCapacity += capacity;
                     Map<String, Object> roomValues = newRoom.toMap();
 
                     Map<String, Object> childUpdates = new HashMap<>();

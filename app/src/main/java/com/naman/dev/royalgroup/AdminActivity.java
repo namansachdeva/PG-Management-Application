@@ -73,6 +73,9 @@ public class AdminActivity extends AppCompatActivity {
             case R.id.newroombtn:
                 startActivity(new Intent(AdminActivity.this,NewRoomActivity.class));
                 return true;
+            case R.id.guestmodebtn:
+                startActivity(new Intent(AdminActivity.this,GuestActivity.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

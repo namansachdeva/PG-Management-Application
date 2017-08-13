@@ -18,9 +18,15 @@
         </activity>
         <activity android:name=".AdminActivity" />
         <activity android:name=".GuestActivity" />
-        <activity android:name=".NewGuestActivity" />
-        <activity android:name=".ImpContactsActivity" />
-        <activity android:name=".NewRoomActivity"></activity>
+        <activity
+            android:name=".NewGuestActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity
+            android:name=".ImpContactsActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity
+            android:name=".NewRoomActivity"
+            android:parentActivityName=".AdminActivity"></activity>
     </application>
 
 </manifest>
