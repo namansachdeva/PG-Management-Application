@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c40d0630"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/roomno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:hint="Room No"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/roomcapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="start"
+            android:hint="Capacity"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#D3D3D3">
+
+        <AutoCompleteTextView
+            android:id="@+id/pg_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:ellipsize="start"
+            android:hint="PG Name"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:textColor="#FFFFFF" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/addroombtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#660000"
+        android:text="Add Room"
+        android:textColor="#ffffff" />
+</LinearLayout>

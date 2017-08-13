@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import static com.naman.dev.royalgroup.R.id.username;
+import static com.naman.dev.royalgroup.R.id.roomno;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        usernameView = (AutoCompleteTextView) findViewById(username);
-        passwordView = (AutoCompleteTextView) findViewById(R.id.password);
+        usernameView = (AutoCompleteTextView) findViewById(roomno);
+        passwordView = (AutoCompleteTextView) findViewById(R.id.roomcapacity);
         loginBtn = (Button) findViewById(R.id.login);
         guestmodeBtn = (Button) findViewById(R.id.guestmode);
 

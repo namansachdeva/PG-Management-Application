@@ -19,7 +19,8 @@
         <activity android:name=".AdminActivity" />
         <activity android:name=".GuestActivity" />
         <activity android:name=".NewGuestActivity" />
-        <activity android:name=".ImpContactsActivity"></activity>
+        <activity android:name=".ImpContactsActivity" />
+        <activity android:name=".NewRoomActivity"></activity>
     </application>
 
 </manifest>

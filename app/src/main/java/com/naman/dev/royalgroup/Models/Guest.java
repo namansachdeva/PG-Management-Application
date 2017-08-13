@@ -21,7 +21,7 @@ public class Guest {
 
     public Guest(String guestName, String guestMobileNo, String guestPermanentAddress,
                  String guestCorrespondenceAddress, Date guestStartDate, int guestRent,
-                 int guestSecurity, ArrayList<Integer> guestMonthArrayList) {
+                 int guestSecurity) {
         this.guestName = guestName;
         this.guestMobileNo = guestMobileNo;
         this.guestPermanentAddress = guestPermanentAddress;
@@ -29,7 +29,6 @@ public class Guest {
         this.guestStartDate = guestStartDate;
         this.guestRent = guestRent;
         this.guestSecurity = guestSecurity;
-        this.guestMonthArrayList = guestMonthArrayList;
     }
 
     public Map<String, Object> toMap() {
