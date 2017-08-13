@@ -25,7 +25,7 @@ public class AdminActivity extends AppCompatActivity {
         pge38card = (CardView) findViewById(R.id.pge38_card);
         pge114card = (CardView) findViewById(R.id.pge114_card);
         pge1124card = (CardView) findViewById(R.id.pge1124_card);
-        pge38card =(CardView) findViewById(R.id.pge38_card);
+        pgbansalcard =(CardView) findViewById(R.id.pgbansal_card);
 
         impContactsbtn = (TextView) findViewById(R.id.imp_contacts_btn);
         newGuestbtn = (TextView) findViewById(R.id.new_guest_btn);
