@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         guestmodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,GuestActivity.class));
+                startActivity(new Intent(MainActivity.this,VisitorActivity.class));
             }
         });
 

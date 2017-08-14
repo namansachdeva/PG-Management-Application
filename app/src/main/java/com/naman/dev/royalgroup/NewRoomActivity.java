@@ -87,18 +87,19 @@ public class NewRoomActivity extends AppCompatActivity {
             mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    int pgCapacity;
-                    if(dataSnapshot.child("pg").child(pgname).child("capacity").getValue()!=null)
-                    pgCapacity = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("capacity").getValue().toString());
+                    int pgRemainingSeats;
+                    if(dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue()!=null)
+                        pgRemainingSeats = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue().toString());
                     else
-                        pgCapacity = 0;
+                        pgRemainingSeats = 0;
+
                     Room newRoom = new Room(capacity);
-                    pgCapacity += capacity;
+                    pgRemainingSeats += capacity;
                     Map<String, Object> roomValues = newRoom.toMap();
 
                     Map<String, Object> childUpdates = new HashMap<>();
                     childUpdates.put("/pg/" + pgname + "/rooms/" + roomno, roomValues);
-                    childUpdates.put("/pg/"+pgname+"/capacity",pgCapacity);
+                    childUpdates.put("/pg/"+pgname+"/pgRemainingSeats",pgRemainingSeats);
                     mDatabase.updateChildren(childUpdates);
                 }
 

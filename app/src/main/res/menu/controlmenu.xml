@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/guestmodebtn"
-        android:title="Guest Mode" />
+        android:id="@+id/visitormodebtn"
+        android:title="Visitor Mode" />
     <item
         android:id="@+id/newroombtn"
         android:title="New Room" />
