@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.naman.dev.royalgroup">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +38,8 @@
             android:parentActivityName=".AdminActivity" />
         <activity
             android:name=".NewRoomActivity"
-            android:parentActivityName=".AdminActivity"></activity>
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".UploadPhotoIDActivity"></activity>
     </application>
 
 </manifest>
