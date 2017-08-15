@@ -41,7 +41,9 @@
             android:name=".NewRoomActivity"
             android:parentActivityName=".AdminActivity" />
         <activity android:name=".UploadPhotoIDActivity" />
-        <activity android:name=".NewPaymentActivity"></activity>
+        <activity android:name=".NewPaymentActivity" />
+        <activity android:name=".PGInfoActivity" />
+        <activity android:name=".RoomInfoActivity"></activity>
     </application>
 
 </manifest>

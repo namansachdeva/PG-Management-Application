@@ -32,6 +32,42 @@ public class AdminActivity extends AppCompatActivity {
         pge1124card = (CardView) findViewById(R.id.pge1124_card);
         pgbansalcard =(CardView) findViewById(R.id.pgbansal_card);
 
+        pge38card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
+                i.putExtra("pgname","38");
+                startActivity(i);
+
+            }
+        });
+        pge1124card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
+                i.putExtra("pgname","124");
+                startActivity(i);
+
+            }
+        });
+        pge114card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
+                i.putExtra("pgname","114");
+                startActivity(i);
+
+            }
+        });
+        pgbansalcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
+                i.putExtra("pgname","786");
+                startActivity(i);
+
+            }
+        });
         impContactsbtn = (TextView) findViewById(R.id.imp_contacts_btn);
         newGuestbtn = (TextView) findViewById(R.id.new_guest_btn);
 
