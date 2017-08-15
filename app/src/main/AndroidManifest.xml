@@ -43,7 +43,8 @@
         <activity android:name=".UploadPhotoIDActivity" />
         <activity android:name=".NewPaymentActivity" />
         <activity android:name=".PGInfoActivity" />
-        <activity android:name=".RoomInfoActivity"></activity>
+        <activity android:name=".RoomInfoActivity" />
+        <activity android:name=".GuestDetailActivity"></activity>
     </application>
 
 </manifest>

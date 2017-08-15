@@ -57,7 +57,7 @@ public class NewRoomActivity extends AppCompatActivity {
         View focusView = null;
         boolean cancel = false;
 
-        final String roomno =mRoomNo.getText().toString();
+        final String roomno = mRoomNo.getText().toString();
         final int capacity = Integer.parseInt(mCapacity.getText().toString());
         final String pgname = mPGName.getText().toString();
 
@@ -83,12 +83,12 @@ public class NewRoomActivity extends AppCompatActivity {
         } else {
 
             setEditingEnabled(false);
-            Toast.makeText(NewRoomActivity.this,"Adding New Room...",Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewRoomActivity.this, "Adding New Room...", Toast.LENGTH_SHORT).show();
             mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     int pgRemainingSeats;
-                    if(dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue()!=null)
+                    if (dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue() != null)
                         pgRemainingSeats = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue().toString());
                     else
                         pgRemainingSeats = 0;
@@ -99,7 +99,7 @@ public class NewRoomActivity extends AppCompatActivity {
 
                     Map<String, Object> childUpdates = new HashMap<>();
                     childUpdates.put("/pg/" + pgname + "/rooms/" + roomno, roomValues);
-                    childUpdates.put("/pg/"+pgname+"/pgRemainingSeats",pgRemainingSeats);
+                    childUpdates.put("/pg/" + pgname + "/pgRemainingSeats", pgRemainingSeats);
                     mDatabase.updateChildren(childUpdates);
                 }
 
@@ -115,6 +115,7 @@ public class NewRoomActivity extends AppCompatActivity {
 
         }
     }
+
     private void setEditingEnabled(boolean enabled) {
         mRoomNo.setEnabled(enabled);
         mCapacity.setEnabled(enabled);

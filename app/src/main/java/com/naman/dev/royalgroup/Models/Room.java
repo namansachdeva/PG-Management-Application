@@ -10,17 +10,19 @@ import java.util.Map;
 public class Room {
 
     public int roomCapacity;
-    public int roomRemaingSeats;
+    public int roomRemainingSeats;
+
+    public Room(){}
 
     public Room(int roomCapacity) {
         this.roomCapacity = roomCapacity;
-        this.roomRemaingSeats = roomCapacity;
+        this.roomRemainingSeats = roomCapacity;
     }
 
     public Map<String, Object> toMap() {
         HashMap<String, Object> room = new HashMap<>();
         room.put("roomCapacity", roomCapacity);
-        room.put("roomRemainingSeats", roomRemaingSeats);
+        room.put("roomRemainingSeats", roomRemainingSeats);
         return room;
     }
 

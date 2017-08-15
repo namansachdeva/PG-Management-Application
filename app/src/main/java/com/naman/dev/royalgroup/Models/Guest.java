@@ -21,8 +21,11 @@ public class Guest {
     public boolean stillAGuest;
     public ArrayList<Integer> guestMonthArrayList;
 
+    public Guest() {
+    }
+
     public Guest(String guestName, String guestMobileNo, String guestPermanentAddress,
-                 String guestCorrespondenceAddress, long guestStartDate, String guestPGName, String guestRoomNo,boolean stillAGuest) {
+                 String guestCorrespondenceAddress, long guestStartDate, String guestPGName, String guestRoomNo, boolean stillAGuest) {
         this.guestName = guestName;
         this.guestMobileNo = guestMobileNo;
         this.guestPermanentAddress = guestPermanentAddress;
@@ -41,12 +44,12 @@ public class Guest {
         guest.put("guestMobileNo", guestMobileNo);
         guest.put("guestPermanentAddress", guestPermanentAddress);
         guest.put("guestCorrespondenceAddress", guestCorrespondenceAddress);
-        guest.put("guestStartDate",guestStartDate);
-        guest.put("guestPGName",guestPGName);
-        guest.put("guestRoomNo",guestRoomNo);
+        guest.put("guestStartDate", guestStartDate);
+        guest.put("guestPGName", guestPGName);
+        guest.put("guestRoomNo", guestRoomNo);
         guest.put("guestRent", guestRent);
-        guest.put("guestSecurity",guestSecurity);
-        guest.put("stillAGuest",stillAGuest);
+        guest.put("guestSecurity", guestSecurity);
+        guest.put("stillAGuest", stillAGuest);
         guest.put("guestMonthArrayList", guestMonthArrayList);
         return guest;
     }

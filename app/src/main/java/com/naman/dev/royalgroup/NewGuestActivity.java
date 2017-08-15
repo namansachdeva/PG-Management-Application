@@ -76,7 +76,7 @@ public class NewGuestActivity extends AppCompatActivity {
                                 Guest guest = new Guest(name, mobile, paddress, caddress, date, pgname, roomno,true);
                                 Map<String, Object> guestValues = guest.toMap();
                                 Map<String, Object> childUpdates = new HashMap<>();
-                                childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/guests/"+key,name);
+                                childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/guests/"+key,guestValues);
                                 childUpdates.put("/guests/" + key, guestValues);
                                 int pgRemainingSeats = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue().toString());
                                 int roomRemainingSeats = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("rooms").child(roomno).child("roomRemainingSeats").getValue().toString());

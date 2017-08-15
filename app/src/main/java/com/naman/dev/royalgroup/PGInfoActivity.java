@@ -17,7 +17,7 @@ import com.naman.dev.royalgroup.Models.Room;
 
 public class PGInfoActivity extends AppCompatActivity {
 
-    private String pgname;
+    private String PG_KEY;
     private DatabaseReference mDatabase;
     private RecyclerView pginfoRecyclerView;
     private FirebaseRecyclerAdapter<Room, RoomViewHolder> mAdapter;
@@ -28,17 +28,15 @@ public class PGInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pginfo);
         Intent i = getIntent();
-        pgname = i.getStringExtra("pgname");
+        PG_KEY = i.getStringExtra("pgname");
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.keepSynced(true);
 
         pginfoRecyclerView = (RecyclerView) findViewById(R.id.pginforecylerview);
         mManager = new LinearLayoutManager(PGInfoActivity.this);
-        mManager.setReverseLayout(true);
-        mManager.setStackFromEnd(true);
         pginfoRecyclerView.setLayoutManager(mManager);
 
-        Query query = mDatabase.child("pg").child(pgname);
+        Query query = mDatabase.child("pg").child(PG_KEY).child("rooms");
 
         mAdapter = new FirebaseRecyclerAdapter<Room, RoomViewHolder>(Room.class, R.layout.room_item, RoomViewHolder.class, query) {
 
@@ -48,13 +46,14 @@ public class PGInfoActivity extends AppCompatActivity {
                 final String roomKey = roomsRef.getKey();
 
                 viewHolder.setRoomno(roomKey);
-                viewHolder.setSeats(model.roomCapacity - model.roomRemaingSeats, model.roomCapacity);
+                viewHolder.setSeats(model.roomCapacity - model.roomRemainingSeats, model.roomCapacity);
 
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(PGInfoActivity.this, RoomInfoActivity.class);
-                        i.putExtra(RoomInfoActivity.ROOM_KEY, roomKey);
+                        i.putExtra("roomno", roomKey);
+                        i.putExtra("pgname", PG_KEY);
                         startActivity(i);
                     }
                 });

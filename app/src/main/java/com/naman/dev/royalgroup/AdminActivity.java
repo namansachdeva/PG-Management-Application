@@ -30,13 +30,13 @@ public class AdminActivity extends AppCompatActivity {
         pge38card = (CardView) findViewById(R.id.pge38_card);
         pge114card = (CardView) findViewById(R.id.pge114_card);
         pge1124card = (CardView) findViewById(R.id.pge1124_card);
-        pgbansalcard =(CardView) findViewById(R.id.pgbansal_card);
+        pgbansalcard = (CardView) findViewById(R.id.pgbansal_card);
 
         pge38card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
-                i.putExtra("pgname","38");
+                Intent i = new Intent(AdminActivity.this, PGInfoActivity.class);
+                i.putExtra("pgname", "38");
                 startActivity(i);
 
             }
@@ -44,8 +44,8 @@ public class AdminActivity extends AppCompatActivity {
         pge1124card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
-                i.putExtra("pgname","124");
+                Intent i = new Intent(AdminActivity.this, PGInfoActivity.class);
+                i.putExtra("pgname", "124");
                 startActivity(i);
 
             }
@@ -53,8 +53,8 @@ public class AdminActivity extends AppCompatActivity {
         pge114card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
-                i.putExtra("pgname","114");
+                Intent i = new Intent(AdminActivity.this, PGInfoActivity.class);
+                i.putExtra("pgname", "114");
                 startActivity(i);
 
             }
@@ -62,8 +62,8 @@ public class AdminActivity extends AppCompatActivity {
         pgbansalcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminActivity.this,PGInfoActivity.class);
-                i.putExtra("pgname","786");
+                Intent i = new Intent(AdminActivity.this, PGInfoActivity.class);
+                i.putExtra("pgname", "786");
                 startActivity(i);
 
             }
@@ -74,14 +74,14 @@ public class AdminActivity extends AppCompatActivity {
         impContactsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminActivity.this,ImpContactsActivity.class));
+                startActivity(new Intent(AdminActivity.this, ImpContactsActivity.class));
             }
         });
 
         newGuestbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminActivity.this,NewGuestActivity.class));
+                startActivity(new Intent(AdminActivity.this, NewGuestActivity.class));
             }
         });
     }
@@ -107,10 +107,10 @@ public class AdminActivity extends AppCompatActivity {
                 logOut();
                 return true;
             case R.id.newroombtn:
-                startActivity(new Intent(AdminActivity.this,NewRoomActivity.class));
+                startActivity(new Intent(AdminActivity.this, NewRoomActivity.class));
                 return true;
             case R.id.visitormodebtn:
-                startActivity(new Intent(AdminActivity.this,VisitorActivity.class));
+                startActivity(new Intent(AdminActivity.this, VisitorActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
