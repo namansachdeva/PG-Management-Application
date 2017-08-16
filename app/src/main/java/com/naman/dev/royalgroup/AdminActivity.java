@@ -11,6 +11,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -22,6 +27,12 @@ public class AdminActivity extends AppCompatActivity {
     private TextView impContactsbtn;
     private TextView newGuestbtn;
 
+    private TextView remainingSeats38;
+    private TextView remainingSeats124;
+    private TextView remainingSeats114;
+    private TextView remainingSeats786;
+
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +42,33 @@ public class AdminActivity extends AppCompatActivity {
         pge114card = (CardView) findViewById(R.id.pge114_card);
         pge1124card = (CardView) findViewById(R.id.pge1124_card);
         pgbansalcard = (CardView) findViewById(R.id.pgbansal_card);
+
+        remainingSeats38 = (TextView) findViewById(R.id.e38seats);
+        remainingSeats124 = (TextView) findViewById(R.id.e124seats);
+        remainingSeats114 = (TextView) findViewById(R.id.e114seats);
+        remainingSeats786 = (TextView) findViewById(R.id.bansalseats);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("pg").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot d:dataSnapshot.getChildren()){
+                    String pgname = d.getKey();
+                    String seats_remaining = d.child("pgRemainingSeats").getValue().toString();
+                    switch (pgname){
+                        case "38" : remainingSeats38.setText(seats_remaining + " seats"); break;
+                        case "124": remainingSeats124.setText(seats_remaining+ " seats"); break;
+                        case "114": remainingSeats114.setText(seats_remaining + " seats"); break;
+                        case "786": remainingSeats786.setText(seats_remaining + " seats"); break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         pge38card.setOnClickListener(new View.OnClickListener() {
             @Override
