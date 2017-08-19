@@ -4,10 +4,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,43 +34,32 @@ public class ImpContactsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imp_contacts);
         // get name and number directly from firebase
-        contactsArray = new ArrayList<Contact>();
-    contactsArray.add(new Contact("Naman","8222831183"));
+        contactsArray = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         recyclerView = (RecyclerView) findViewById(R.id.imp_contacts_recyclerView);
-        mDatabase.child("contacts").addListenerForSingleValueEvent(new ValueEventListener() {
+        mAdapter = new ContactAdapter(this,contactsArray);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                try {
-                    contactsArray.clear();
-                } catch (Exception e) {
-                    Log.e("Clear Error", e.getMessage());
-                }
-
-                for (DataSnapshot d : dataSnapshot.getChildren()) {
+                for (DataSnapshot d : dataSnapshot.child("contacts").getChildren()) {
                     String name = d.getKey(), number;
                     if (d.getValue() != null) {
-                        number = d.getValue().toString();
+                        number = d.getValue(Long.class).toString();
                     } else
-                        number = "9876543210";
-                    Contact contact = new Contact(name, number);
-                    contactsArray.add(contact);
+                        number = "99999999";
+                    Log.e("qwerty", name + number);
+                    contactsArray.add(new Contact(name, number));
+                    recyclerView.setAdapter(mAdapter);
+                    Toast.makeText(ImpContactsActivity.this, "Done", Toast.LENGTH_SHORT).show();
                 }
-                writeToSharedPrefs();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
-        readFromSharedPrefs();
-        mAdapter = new ContactAdapter(contactsArray);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
-
 
     }
 
