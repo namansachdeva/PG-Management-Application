@@ -1,7 +1,9 @@
 package com.naman.dev.royalgroup;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.Menu;
@@ -18,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class AdminActivity extends AppCompatActivity {
+    private ProgressDialog mProgressDialog;
 
     private CardView pge38card;
     private CardView pge114card;
@@ -33,10 +36,12 @@ public class AdminActivity extends AppCompatActivity {
     private TextView remainingSeats786;
 
     private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+        showProgressDialog();
 
         pge38card = (CardView) findViewById(R.id.pge38_card);
         pge114card = (CardView) findViewById(R.id.pge114_card);
@@ -52,14 +57,22 @@ public class AdminActivity extends AppCompatActivity {
         mDatabase.child("pg").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot d:dataSnapshot.getChildren()){
+                for (DataSnapshot d : dataSnapshot.getChildren()) {
                     String pgname = d.getKey();
                     String seats_remaining = d.child("pgRemainingSeats").getValue().toString();
-                    switch (pgname){
-                        case "38" : remainingSeats38.setText(seats_remaining + " seats"); break;
-                        case "124": remainingSeats124.setText(seats_remaining+ " seats"); break;
-                        case "114": remainingSeats114.setText(seats_remaining + " seats"); break;
-                        case "786": remainingSeats786.setText(seats_remaining + " seats"); break;
+                    switch (pgname) {
+                        case "38":
+                            remainingSeats38.setText(seats_remaining + " seats");
+                            break;
+                        case "124":
+                            remainingSeats124.setText(seats_remaining + " seats");
+                            break;
+                        case "114":
+                            remainingSeats114.setText(seats_remaining + " seats");
+                            break;
+                        case "786":
+                            remainingSeats786.setText(seats_remaining + " seats");
+                            break;
                     }
                 }
             }
@@ -153,5 +166,21 @@ public class AdminActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void showProgressDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.setMessage("Loading...");
+        }
+
+        mProgressDialog.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                mProgressDialog.dismiss();
+            }
+        }, 3000);
     }
 }

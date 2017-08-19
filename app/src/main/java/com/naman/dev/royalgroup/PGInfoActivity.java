@@ -1,9 +1,7 @@
 package com.naman.dev.royalgroup;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +18,6 @@ import com.naman.dev.royalgroup.Models.Room;
 public class PGInfoActivity extends AppCompatActivity {
 
     private String PG_KEY;
-    private ProgressDialog mProgressDialog;
     private DatabaseReference mDatabase;
     private RecyclerView pginfoRecyclerView;
     private FirebaseRecyclerAdapter<Room, RoomViewHolder> mAdapter;
@@ -34,7 +31,6 @@ public class PGInfoActivity extends AppCompatActivity {
         PG_KEY = i.getStringExtra("pgname");
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.keepSynced(true);
-        showProgressDialog();
 
         pginfoRecyclerView = (RecyclerView) findViewById(R.id.pginforecylerview);
         mManager = new LinearLayoutManager(PGInfoActivity.this);
@@ -87,19 +83,5 @@ public class PGInfoActivity extends AppCompatActivity {
         }
     }
 
-    public void showProgressDialog() {
-        if (mProgressDialog == null) {
-            mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setCancelable(false);
-            mProgressDialog.setMessage("Loading...");
-        }
 
-        mProgressDialog.show();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                mProgressDialog.dismiss();
-            }
-        }, 3000);
-    }
 }
