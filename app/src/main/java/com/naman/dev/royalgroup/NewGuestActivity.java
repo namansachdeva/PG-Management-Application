@@ -73,19 +73,19 @@ public class NewGuestActivity extends AppCompatActivity {
                                     dataSnapshot.child("pg").child(pgname).child("rooms").child(roomno) != null) {
 
                                 String key = mDatabase.child("pg").child(pgname).child("rooms").child(roomno).push().getKey();
-                                Guest guest = new Guest(name, mobile, paddress, caddress, date, pgname, roomno,true);
+                                Guest guest = new Guest(name, mobile, paddress, caddress, date, pgname, roomno, true);
                                 Map<String, Object> guestValues = guest.toMap();
                                 Map<String, Object> childUpdates = new HashMap<>();
-                                childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/guests/"+key,guestValues);
+                                childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/guests/" + key, guestValues);
                                 childUpdates.put("/guests/" + key, guestValues);
                                 int pgRemainingSeats = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("pgRemainingSeats").getValue().toString());
                                 int roomRemainingSeats = Integer.parseInt(dataSnapshot.child("pg").child(pgname).child("rooms").child(roomno).child("roomRemainingSeats").getValue().toString());
-                                if(roomRemainingSeats==0){
-                                    Toast.makeText(NewGuestActivity.this,"No seats available in this room.",Toast.LENGTH_SHORT).show();
+                                if (roomRemainingSeats == 0) {
+                                    Toast.makeText(NewGuestActivity.this, "No seats available in this room.", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
-                                if(pgRemainingSeats==0){
-                                    Toast.makeText(NewGuestActivity.this,"No seats available in this PG.",Toast.LENGTH_SHORT).show();
+                                if (pgRemainingSeats == 0) {
+                                    Toast.makeText(NewGuestActivity.this, "No seats available in this PG.", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 
@@ -95,9 +95,9 @@ public class NewGuestActivity extends AppCompatActivity {
                                 childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/roomRemainingSeats", roomRemainingSeats);
                                 mDatabase.updateChildren(childUpdates);
 
-                                Intent intentToPayment = new Intent(NewGuestActivity.this,NewPaymentActivity.class);
-                                intentToPayment.putExtra("key",key);
-                                startActivity(intentToPayment);
+                                Intent intentToGuestDetail = new Intent(NewGuestActivity.this, NewPaymentActivity.class);
+                                intentToGuestDetail.putExtra("guestkey", key);
+                                startActivity(intentToGuestDetail);
                                 finish();
                             } else {
                                 Toast.makeText(NewGuestActivity.this, "Error adding the guest.", Toast.LENGTH_SHORT).show();
