@@ -25,4 +25,5 @@ public class DetailFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
+
 }

@@ -95,7 +95,7 @@ public class NewGuestActivity extends AppCompatActivity {
                                 childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/roomRemainingSeats", roomRemainingSeats);
                                 mDatabase.updateChildren(childUpdates);
 
-                                Intent intentToGuestDetail = new Intent(NewGuestActivity.this, NewPaymentActivity.class);
+                                Intent intentToGuestDetail = new Intent(NewGuestActivity.this, GuestDetailActivity.class);
                                 intentToGuestDetail.putExtra("guestkey", key);
                                 startActivity(intentToGuestDetail);
                                 finish();
