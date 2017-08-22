@@ -37,10 +37,6 @@ public class GuestDetailActivity extends AppCompatActivity {
         Intent i = getIntent();
         guestKey = i.getStringExtra("guestkey");
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
