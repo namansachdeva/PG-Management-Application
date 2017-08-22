@@ -69,8 +69,8 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_alignParentRight="true"
-                        android:layout_margin="16dp"
                         android:layout_centerVertical="true"
+                        android:layout_margin="16dp"
                         android:src="@drawable/phone" />
 
 
@@ -78,7 +78,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/addresscardview"
+                android:id="@+id/pgcardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/phonecardview"
@@ -103,10 +103,11 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_margin="8dp"
-                        android:text="114"
                         android:layout_toRightOf="@+id/pg_name_tag"
+                        android:text="114"
                         android:textIsSelectable="true"
                         android:textSize="24sp" />
+
                     <TextView
                         android:id="@+id/room_name_tag"
                         android:layout_width="wrap_content"
@@ -121,10 +122,139 @@
                         android:id="@+id/guest_detail_room_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_margin="8dp"
                         android:text="002"
+                        android:textIsSelectable="true"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/addresscardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pgcardview"
+                android:layout_margin="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/perma_address_name_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Permanent Address:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/guest_detail_perma_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/perma_address_name_tag"
+                        android:layout_margin="8dp"
+                        android:text="H No 254, Abcdjkdlwjdkwjdwm"
+                        android:textIsSelectable="true"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/corres_address_name_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/guest_detail_perma_address"
+                        android:layout_margin="8dp"
+                        android:text="Corresponding Address:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/guest_detail_corres_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/corres_address_name_tag"
+                        android:layout_margin="8dp"
+                        android:text="YMCA University BTech IT"
+                        android:textIsSelectable="true"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/officedetailscardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addresscardview"
+                android:layout_margin="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/start_date_name_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Start Date:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/guest_detail_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/start_date_name_tag"
+                        android:layout_margin="8dp"
+                        android:text="August 5, 2017"
+                        android:textIsSelectable="true"
+                        android:textSize="24sp" />
+                     <ImageView
+                         android:id="@+id/showIDbtn"
+                         android:src="@drawable/common_google_signin_btn_icon_light"
+                         android:layout_alignParentRight="true"
+                         android:layout_margin="16dp"
+                         android:layout_width="64dp"
+                         android:layout_height="64dp" />
+
+                    <TextView
+                        android:id="@+id/rent_name_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/guest_detail_start_date"
+                        android:layout_margin="8dp"
+                        android:text="Pending Rent:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/guest_detail_rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rent_name_tag"
+                        android:layout_margin="8dp"
+                        android:text="6000"
+                        android:textIsSelectable="true"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/security_name_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_centerVertical="true"
+                        android:layout_below="@+id/showIDbtn"
+                        android:layout_toLeftOf="@+id/guest_detail_security"
+                        android:text="Security:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/guest_detail_security"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:layout_below="@+id/showIDbtn"
+                        android:layout_margin="8dp"
+                        android:text="3000"
                         android:textIsSelectable="true"
                         android:textSize="24sp" />
                 </RelativeLayout>
