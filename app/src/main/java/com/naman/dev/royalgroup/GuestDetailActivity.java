@@ -86,4 +86,7 @@ public class GuestDetailActivity extends AppCompatActivity {
             return null;
         }
     }
+    public String getGuestKey(){
+        return guestKey;
+    }
 }
