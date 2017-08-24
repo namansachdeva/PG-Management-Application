@@ -85,16 +85,16 @@ public class DetailFragment extends Fragment {
         mDatabase.child("guests").child(guestKey).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                final Guest guest =  dataSnapshot.getValue(Guest.class);
+                final Guest guest = dataSnapshot.getValue(Guest.class);
                 guestName.setText(guest.guestName);
                 guestMobileNo.setText(guest.guestMobileNo);
                 guestPGName.setText(guest.guestPGName);
                 guestRoomNo.setText(guest.guestRoomNo);
                 guestCorresAddress.setText(guest.guestCorrespondenceAddress);
                 guestPermaAddress.setText(guest.guestPermanentAddress);
-                guestSecurity.setText(guest.guestSecurity+"");
-                guestStartdate.setText(guest.guestStartDate+"");
-                guestRent.setText(guest.guestRent+"");
+                guestSecurity.setText(guest.guestSecurity + "");
+                guestStartdate.setText(guest.guestStartDate + "");
+                guestRent.setText(guest.guestRent + "");
                 callIntent.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
