@@ -23,6 +23,10 @@ import com.naman.dev.royalgroup.GuestDetailActivity;
 import com.naman.dev.royalgroup.Models.Guest;
 import com.naman.dev.royalgroup.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 public class DetailFragment extends Fragment {
 
     private DatabaseReference mDatabase;
@@ -86,6 +90,10 @@ public class DetailFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final Guest guest = dataSnapshot.getValue(Guest.class);
+                Date date = new Date(guest.guestStartDate);
+                SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
+                format.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
+                String formatted = format.format(date);
                 guestName.setText(guest.guestName);
                 guestMobileNo.setText(guest.guestMobileNo);
                 guestPGName.setText(guest.guestPGName);
@@ -93,7 +101,7 @@ public class DetailFragment extends Fragment {
                 guestCorresAddress.setText(guest.guestCorrespondenceAddress);
                 guestPermaAddress.setText(guest.guestPermanentAddress);
                 guestSecurity.setText(guest.guestSecurity + "");
-                guestStartdate.setText(guest.guestStartDate + "");
+                guestStartdate.setText(formatted);
                 guestRent.setText(guest.guestRent + "");
                 callIntent.setOnClickListener(new View.OnClickListener() {
                     @Override
