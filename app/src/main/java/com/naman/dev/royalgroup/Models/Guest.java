@@ -35,7 +35,7 @@ public class Guest {
         this.guestPGName = guestPGName;
         this.guestRoomNo = guestRoomNo;
         this.guestRent = guestRent;
-        this.guestPendingRent = 0;
+        this.guestPendingRent = guestRent;
         this.guestSecurity = 0;
         this.stillAGuest = stillAGuest;
     }

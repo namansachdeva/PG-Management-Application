@@ -41,7 +41,7 @@ public class FunctionsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_functions, container, false);
         uploadIDBtn = (Button) rootView.findViewById(R.id.uploadIDbtn);
         uploadPhotoBtn = (Button) rootView.findViewById(R.id.uploadPhotobtn);
         newPaymentBtn = (Button) rootView.findViewById(R.id.newPaymentbtn);
@@ -59,15 +59,15 @@ public class FunctionsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         newPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent newPaymentIntent = new Intent(getActivity(), NewPaymentActivity.class);
-                newPaymentIntent.putExtra("guestKey",guestKey);
+                newPaymentIntent.putExtra("guestKey", guestKey);
                 startActivity(newPaymentIntent);
             }
         });
+
 
     }
 }

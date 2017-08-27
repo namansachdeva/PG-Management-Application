@@ -46,8 +46,8 @@ public class NewPaymentActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Guest guest = dataSnapshot.getValue(Guest.class);
                 guestNameTextView.setText(guest.guestName);
-                guestPendingRentTextView.setText(guest.guestPendingRent);
-                paymentAmount.setText(guest.guestPendingRent);
+                guestPendingRentTextView.setText(guest.guestPendingRent+"");
+                paymentAmount.setText(guest.guestPendingRent+"");
             }
 
             @Override
@@ -55,5 +55,6 @@ public class NewPaymentActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }
