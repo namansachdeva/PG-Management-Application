@@ -1,5 +1,6 @@
 package com.naman.dev.royalgroup.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.naman.dev.royalgroup.GuestDetailActivity;
+import com.naman.dev.royalgroup.NewPaymentActivity;
 import com.naman.dev.royalgroup.R;
 
 /**
@@ -57,6 +59,15 @@ public class FunctionsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        newPaymentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newPaymentIntent = new Intent(getActivity(), NewPaymentActivity.class);
+                newPaymentIntent.putExtra("guestKey",guestKey);
+                startActivity(newPaymentIntent);
+            }
+        });
 
     }
 }

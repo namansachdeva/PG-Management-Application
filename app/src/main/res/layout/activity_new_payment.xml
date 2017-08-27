@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.naman.dev.royalgroup.NewPaymentActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/payment_for_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:text="PAYMENT FOR"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/guest_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/payment_for_tag"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:text="Naman Sachdeva"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pending_rent_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guest_name_text"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:text="Pending Rent : Rs 5500/-"
+        android:textSize="20sp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/amount_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pending_rent_text"
+        android:layout_margin="8dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/amount_paid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:hint="Amount"
+            android:imeOptions="actionNext"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount_wrapper">
+
+        <RadioButton
+            android:id="@+id/rent_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:checked="true"
+            android:text="Rent"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/security_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Security"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submit_payment_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimary"
+        android:text="Pay Now"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
