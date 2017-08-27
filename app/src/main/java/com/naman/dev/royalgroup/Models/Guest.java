@@ -17,6 +17,7 @@ public class Guest {
     public String guestPGName;
     public String guestRoomNo;
     public int guestRent;
+    public int guestPendingRent;
     public int guestSecurity;
     public boolean stillAGuest;
     public ArrayList<Integer> guestMonthArrayList;
@@ -25,7 +26,7 @@ public class Guest {
     }
 
     public Guest(String guestName, String guestMobileNo, String guestPermanentAddress,
-                 String guestCorrespondenceAddress, long guestStartDate, String guestPGName, String guestRoomNo, boolean stillAGuest) {
+                 String guestCorrespondenceAddress, long guestStartDate,int guestRent, String guestPGName, String guestRoomNo, boolean stillAGuest) {
         this.guestName = guestName;
         this.guestMobileNo = guestMobileNo;
         this.guestPermanentAddress = guestPermanentAddress;
@@ -33,7 +34,8 @@ public class Guest {
         this.guestStartDate = guestStartDate;
         this.guestPGName = guestPGName;
         this.guestRoomNo = guestRoomNo;
-        this.guestRent = 0;
+        this.guestRent = guestRent;
+        this.guestPendingRent = 0;
         this.guestSecurity = 0;
         this.stillAGuest = stillAGuest;
     }
@@ -48,6 +50,7 @@ public class Guest {
         guest.put("guestPGName", guestPGName);
         guest.put("guestRoomNo", guestRoomNo);
         guest.put("guestRent", guestRent);
+        guest.put("guestPendingRent",guestPendingRent);
         guest.put("guestSecurity", guestSecurity);
         guest.put("stillAGuest", stillAGuest);
         guest.put("guestMonthArrayList", guestMonthArrayList);

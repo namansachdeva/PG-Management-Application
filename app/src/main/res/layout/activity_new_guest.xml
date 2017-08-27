@@ -90,7 +90,24 @@
             android:id="@+id/guest_start_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D3D3D3">
 
+            <AutoCompleteTextView
+                android:id="@+id/guest_rent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="20dp"
+                android:ellipsize="start"
+                android:hint="Rent"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textColor="#FFFFFF" />
+        </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

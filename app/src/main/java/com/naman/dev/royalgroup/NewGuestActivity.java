@@ -27,6 +27,7 @@ public class NewGuestActivity extends AppCompatActivity {
     private AutoCompleteTextView guestPermaAddressView;
     private AutoCompleteTextView guestCorresAddressView;
     private DatePicker guestStartDatePicker;
+    private AutoCompleteTextView guestRentView;
     private AutoCompleteTextView guestRoomNoView;
     private AutoCompleteTextView guestPGNameView;
 
@@ -47,6 +48,7 @@ public class NewGuestActivity extends AppCompatActivity {
         guestStartDatePicker = (DatePicker) findViewById(R.id.guest_start_date);
         guestPGNameView = (AutoCompleteTextView) findViewById(R.id.guest_pg_name);
         guestRoomNoView = (AutoCompleteTextView) findViewById(R.id.guest_roomno);
+        guestRentView = (AutoCompleteTextView) findViewById(R.id.guest_rent);
 
         proceedNewGuestbtn = (Button) findViewById(R.id.proceedbtn);
 
@@ -65,6 +67,7 @@ public class NewGuestActivity extends AppCompatActivity {
                     final long date = guestStartDatePicker.getMaxDate();
                     final String pgname = guestPGNameView.getText().toString();
                     final String roomno = guestRoomNoView.getText().toString();
+                    final int rent = Integer.parseInt(guestRentView.getText().toString());
 
                     mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -73,7 +76,7 @@ public class NewGuestActivity extends AppCompatActivity {
                                     dataSnapshot.child("pg").child(pgname).child("rooms").child(roomno) != null) {
 
                                 String key = mDatabase.child("pg").child(pgname).child("rooms").child(roomno).push().getKey();
-                                Guest guest = new Guest(name, mobile, paddress, caddress, date, pgname, roomno, true);
+                                Guest guest = new Guest(name, mobile, paddress, caddress, date, rent, pgname, roomno, true);
                                 Map<String, Object> guestValues = guest.toMap();
                                 Map<String, Object> childUpdates = new HashMap<>();
                                 childUpdates.put("/pg/" + pgname + "/rooms/" + roomno + "/guests/" + key, guestValues);
